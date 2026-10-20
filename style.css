@@ -1,0 +1,227 @@
+:root {
+  --page-background: #f1f2f4;
+  --header-background: #ffffff;
+  --body-text: #5e6062;
+  --link-blue: #2589b8;
+  --icon-gray: #777a7c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--page-background);
+  color: var(--body-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 72px;
+  padding: 0 11px 0 25px;
+  background: var(--header-background);
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #d3d4d6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  height: 50px;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 96px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--icon-gray);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid #2589b8;
+  outline-offset: 2px;
+}
+
+.fullscreen-button {
+  width: 42px;
+  height: 42px;
+  margin-right: 7px;
+}
+
+.fullscreen-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3.1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+.toolbar-divider {
+  display: block;
+  width: 1px;
+  height: 30px;
+  margin-right: 15px;
+  background: #dedede;
+}
+
+.menu-button {
+  width: 34px;
+  height: 42px;
+}
+
+.menu-button svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: butt;
+}
+
+.message-card {
+  width: min(1000px, calc(100% - 32px));
+  height: 258px;
+  margin: 25px auto 0;
+  padding: 15px 10px 0;
+  overflow: hidden;
+  border-radius: 11px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.message-copy {
+  color: var(--body-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.message-copy a {
+  color: var(--link-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu-popover {
+  position: absolute;
+  top: 64px;
+  right: 12px;
+  z-index: 20;
+  min-width: 170px;
+  padding: 6px 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.menu-popover[hidden] {
+  display: none;
+}
+
+.menu-popover a {
+  display: block;
+  padding: 9px 15px;
+  color: #5f6468;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu-popover a:hover,
+.menu-popover a:focus-visible {
+  background: #f2f3f5;
+  outline: none;
+}
+
+@media (max-width: 1050px) {
+  .message-card {
+    height: auto;
+    min-height: 258px;
+    padding: 16px 18px 24px;
+    overflow: visible;
+  }
+
+  .message-copy {
+    font-size: clamp(14px, 2.1vw, 22px);
+    line-height: 1.12;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    padding-left: 14px;
+    padding-right: 8px;
+  }
+
+  .brand img {
+    width: 83px;
+    height: 44px;
+  }
+
+  .message-card {
+    width: calc(100% - 20px);
+    margin-top: 18px;
+    border-radius: 9px;
+  }
+
+  .message-copy {
+    font-size: 15px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .fullscreen-button {
+    width: 36px;
+    margin-right: 4px;
+  }
+
+  .toolbar-divider {
+    margin-right: 8px;
+  }
+
+  .menu-button {
+    width: 30px;
+  }
+}
